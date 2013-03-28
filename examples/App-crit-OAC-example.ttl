@@ -1,0 +1,48 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix oa: <http://www.openannotation.org/ns/> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix lawd: <http://lawd.info/ontology/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://linkedlatin.org/annotations/cts/dll/Servius.Aeneid/1/b4752aa9f931800f1761a08c75c507e7>
+    oa:annotatedAt "2013-02-15T13:20:35" ;
+    oa:annotatedBy <http://linkedlatin.org/people/hcayless> ;
+    oa:hasBody <http://linkedlatin.org/collation/Servius.Aeneid/1234> ;
+    oa:hasTarget <http://linkedlatin.org/cts/dll/Servius.Aeneid/1/loc:1234> ;
+    oa:motivatedBy lawd:collation ;
+    a oa:Annotation ;
+    rdfs:label "1.1" .
+
+<http://linkedlatin.org/collation/Servius.Aeneid/1234>
+    lawd:readingType lawd:variant ;
+    lawd:witness <http://linkedlatin.org/Servius/witness/V>, <http://linkedlatin.org/Servius/witness/W> ;
+    a lawd:CollationItem, dctype:Text, cnt:ContentAsText ;
+    cnt:chars "dixerunt" .
+
+<http://linkedlatin.org/cts/dll/Servius.Aeneid/1/loc:1234>
+    oa:hasSelector "match(//div[@n='1']//seg[@n='1'],/disserunt/)" ;
+    oa:hasSource <http://linkedlatin.org/cts/ServiusAuctus:Aeneid.1> ;
+    a oa:FragmentSelector .
+
+<http://linkedlatin.org/people/hcayless>
+    a foaf:Person ;
+    foaf:name "Hugh Cayless" .
+    
+<http://linkedlatin.org/Servius/witness/V>
+    a lawd:Siglum ;
+    lawd:represents <http://linkedlatin.org/biblio/Vat.lat.3317/ref> .
+
+<http://linkedlatin.org/Servius/witness/W>
+    a lawd:Siglum ;
+    lawd:represents <http://linkedlatin.org/biblio/Guelferbytanus_2091/ref> .
+    
+<http://linkedlatin.org/biblio/Vat.lat.3317/ref>
+    a lawd:WrittenWork .
+    
+<http://linkedlatin.org/biblio/Guelferbytanus_2091/ref>
+    a lawd:WrittenWork .
+

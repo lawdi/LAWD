@@ -1,0 +1,42 @@
+@prefix srp: <http://syriaca.org/> .
+@prefix lawd: <http://lawd.info/ontology/1.0/> .
+@prefix oclc: <http://www.worldcat.org/oclc/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+
+# SRP identifies a CanonicalWork with "work/book-of-the-dove"
+#    of which SRP's person/239 (Bar Hebraeus) is the author
+#    and of which the English title is "Book of the Dove"
+
+<srp:work/book-of-the-dove> a lawd:ConceptualWork;
+	dc:creator <srp:person/239/> ;
+	dc:title "Book of the Dove"@en .
+
+
+# SRP identifies a Manuscript with "manuscript/paris-bnf-syr-313"
+#   which supports (i.e., carries, physically contains) something of interest at a particular range (1-56)
+
+<srp:manuscript/paris-bnf-syr-313> a lawd:WrittenWork ;
+	dct:hasPart <srp:manuscript/paris-bnf-syr-313/1-56> .
+
+
+# SRP says the thing of interest at that range is a Text
+#   which embodies Bar Hebraeus' work book of the dove, as defined above
+
+<srp:manuscript/paris-bnf-syr-313/1-56> a lawd:WrittenWork ;
+	lawd:embodies <srp:work/book-of-the-dove> .
+
+
+# OCLC/Worldcat identifies something that contains an edition of that Text
+
+<oclc:7485581/519-599> a lawd:Edition ;
+  dct:source <srp:manuscript/paris-bnf-syr-313/1-56> .
+#How do we indicate an ecclectic edition? How would we indicate an edition with so many MSS that we don't want to indicate them all. Could this just point to the work instead?
+
+# OCLC/Worldcat identifies something that is a translation of that Text
+
+<oclc:652251598> a lawd:Translation ;
+  dc:source <srp:manuscript/paris-bnf-syr-313/1-56> .
+
+# Do we need to distinguish Modern translation and ancient version? Can we show the language of the translation?
