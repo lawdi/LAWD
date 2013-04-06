@@ -8,7 +8,10 @@ ancient world and the standard Linked Data vocablary schemes, like Dublin Core, 
 and CIDOC-CRM. LAWD will accomplishe this by defining just enough new classes and properties to permit the semantic 
 modeling of things like manuscript collation, relating provenance to geography, and prosopography. 
 
-### namespace: http://lawd.info/ontology/ ###
+### namespace: http://lawd.info/ontology/ 
+### prefixes:
+dc: http://purl.org/dc/elements/1.1
+dct: http://purl.org/dc/terms/
 
 
 ## Modeling written works:
@@ -33,23 +36,30 @@ several versions).
 Domain: `WrittenWork`
 Range: `ConceptualWork`
 
+#### `dct:source`
+used to indicate the source of a `WrittenWork`
 
 ## Modeling referencing or commenting on written works:
 
 ### Classes
 
-### `Citation`
-#### subclasses: `Siglum`
+#### `Citation`
+##### subclasses: `Siglum`
 A `Citation` models a bibliographic reference in long or short form that may be used to represent the thing 
 it references (like an entry in a bibliography, for example). When the cited work is a Non Information Resource, a
 `Citation` may be used as the Information Resource analog for the cited work. A `Siglum` is a specialized citation
 used in the context of critical apparatus that uses a symbol to refer to a source, such as a munuscript.
 
-### `CollationItem`
-#### subclasses: `EditorialComment`, `Reference`
+#### `CollationItem`
+##### subclasses: `EditorialComment`, `Reference`
 Models an alternate reading in a manuscript source, an editor's comment on a reading, or the observation that
 a reading has a parallel elsewhere.
 
+### Object Properties
+
+#### `represents`
+#### `representedBy`
+These relate `Citation`s to `WrittenWorks`
 
 
 
