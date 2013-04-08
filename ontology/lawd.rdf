@@ -22,6 +22,7 @@
     <owl:Ontology rdf:about="http://lawd.info/ontology/">
         <owl:versionIRI rdf:resource="http://lawd.info/ontology/1.0/"/>
         <owl:imports rdf:resource="http://purl.org/ontology/olo/core#"/>
+        <owl:imports rdf:resource="http://www.cidoc-crm.org/rdfs/cidoc_crm_v5.0.4_official_release.rdfs"/>
         <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
         <owl:imports rdf:resource="http://www.w3.org/ns/oa#"/>
     </owl:Ontology>
@@ -71,6 +72,22 @@
     
 
 
+    <!-- http://lawd.info/ontology/foundAt -->
+
+    <owl:ObjectProperty rdf:about="http://lawd.info/ontology/foundAt">
+        <rdfs:range rdf:resource="http://lawd.info/ontology/Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lawd.info/ontology/origin -->
+
+    <owl:ObjectProperty rdf:about="http://lawd.info/ontology/origin">
+        <rdfs:range rdf:resource="http://lawd.info/ontology/Place"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://lawd.info/ontology/readingType -->
 
     <owl:ObjectProperty rdf:about="http://lawd.info/ontology/readingType">
@@ -91,7 +108,7 @@
     <!-- http://lawd.info/ontology/represents -->
 
     <owl:ObjectProperty rdf:about="http://lawd.info/ontology/represents">
-        <rdfs:comment xml:lang="en">Describes the relationship between a Siglum and the Written Work it indicates.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Describes the relationship between a Citation or Siglum and the Written Work it indicates.</rdfs:comment>
         <rdfs:domain rdf:resource="http://lawd.info/ontology/Citation"/>
         <rdfs:range rdf:resource="http://lawd.info/ontology/WrittenWork"/>
         <owl:inverseOf rdf:resource="http://lawd.info/ontology/representedBy"/>
@@ -174,6 +191,14 @@
     
 
 
+    <!-- http://lawd.info/ontology/Place -->
+
+    <owl:Class rdf:about="http://lawd.info/ontology/Place">
+        <owl:equivalentClass rdf:resource="&cidoc-crm;E53_Place"/>
+    </owl:Class>
+    
+
+
     <!-- http://lawd.info/ontology/Reading -->
 
     <owl:Class rdf:about="http://lawd.info/ontology/Reading">
@@ -228,7 +253,13 @@
 
     <!-- http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object -->
 
-    <owl:Class rdf:about="&cidoc-crm;E33_Linguistic_Object"/>
+    <rdf:Description rdf:about="&cidoc-crm;E33_Linguistic_Object"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E53_Place -->
+
+    <rdf:Description rdf:about="&cidoc-crm;E53_Place"/>
     
 
 
