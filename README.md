@@ -70,6 +70,14 @@ Range: `Place`
 #### `foundAt`
 Range: `Place`
 
+## Modeling the relationship of artifacts to existing typologies
+
+
+### Object Properties
+
+#### ≣ cidoc:P2_has_type
+
+
 ## Modeling collation and critical apparatus:
 
 ### Classes
