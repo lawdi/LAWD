@@ -16,6 +16,8 @@ dct: http://purl.org/dc/terms/
 
 cidoc: http://www.cidoc-crm.org/cidoc-crm/
 
+geo: http://geovocab.org/spatial#
+
 
 ## Modeling written works:
 
@@ -60,7 +62,8 @@ These relate `Citation`s to `WrittenWork`s
 
 ### Classes
 #### Place
-#### ≣ cidoc:E53_Place
+#### ≣ cidoc:E27_Site
+#### ≣ geo:Feature
 
 ### Object Properties
 
