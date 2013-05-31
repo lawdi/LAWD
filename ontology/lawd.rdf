@@ -5,6 +5,7 @@
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY cidoc-crm "http://www.cidoc-crm.org/cidoc-crm/" >
+    <!ENTITY geo "http://geovocab.org/spatial#" >
     <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
@@ -18,7 +19,8 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:cidoc-crm="http://www.cidoc-crm.org/cidoc-crm/"
-     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:geo="http://geovocab.org/spatial#">
     <owl:Ontology rdf:about="http://lawd.info/ontology/">
         <owl:versionIRI rdf:resource="http://lawd.info/ontology/1.0/"/>
         <owl:imports rdf:resource="http://purl.org/ontology/olo/core#"/>
@@ -194,7 +196,8 @@
     <!-- http://lawd.info/ontology/Place -->
 
     <owl:Class rdf:about="http://lawd.info/ontology/Place">
-        <owl:equivalentClass rdf:resource="&cidoc-crm;E53_Place"/>
+        <owl:equivalentClass rdf:resource="&cidoc-crm;E27_Site"/>
+        <owl:equivalentClass rdf:resource="&geo;Feature"/>
     </owl:Class>
     
 
