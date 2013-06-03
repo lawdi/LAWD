@@ -78,7 +78,7 @@ Range: `Place`
 
 ### Object Properties
 
-#### ≣ cidoc:P2_has_type
+#### ≣ crm:P2_has_type
 
 
 ## Modeling collation and critical apparatus:
