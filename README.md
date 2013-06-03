@@ -14,7 +14,7 @@ dc: http://purl.org/dc/elements/1.1
 
 dct: http://purl.org/dc/terms/
 
-cidoc: http://www.cidoc-crm.org/cidoc-crm/
+crm: http://www.cidoc-crm.org/cidoc-crm/
 
 geo: http://geovocab.org/spatial#
 
@@ -28,7 +28,7 @@ The idea of a work, which may have any number of written expressions (which may 
 Analogous to a Work in FRBR.  
 
 #### `WrittenWork`
-#### ≣ cidoc:E33_Linguistic_Object
+#### ≣ crm:E33_Linguistic_Object
 ##### subclasses: `AssembledWork`, `Edition`, `Translation`, `Hand`
 A written work (whether extant or not) that is a version of a `ConceptualWork`. Subclasses are `AssembledWork`, 
 `Edition`, `Translation`, and `Hand`. A `WrittenWork` may be part of another `WrittenWork` (e.g. a manuscript 
@@ -62,7 +62,7 @@ These relate `Citation`s to `WrittenWork`s
 
 ### Classes
 #### Place
-#### ≣ cidoc:E27_Site
+#### ≣ crm:E27_Site
 #### ≣ geo:Feature
 
 ### Object Properties
