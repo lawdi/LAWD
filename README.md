@@ -41,7 +41,7 @@ several versions).
 A `Citation` models a bibliographic reference in long or short form that may be used to represent the thing 
 it references (like an entry in a bibliography, for example). When the cited work is a Non Information Resource, a
 `Citation` may be used as the Information Resource analog for the cited work. A `Siglum` is a specialized citation
-used in the context of critical apparatus that uses a symbol to refer to a source, such as a munuscript.
+used in the context of critical apparatus that uses a symbol to refer to a source, such as a manuscript.
 
 ### Object Properties
 
