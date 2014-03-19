@@ -64,6 +64,15 @@
     
 
 
+    <!-- http://lawd.info/ontology/child -->
+
+    <owl:ObjectProperty rdf:about="http://lawd.info/ontology/child">
+        <rdfs:range rdf:resource="http://lawd.info/ontology/Person"/>
+        <rdfs:domain rdf:resource="http://lawd.info/ontology/Relationship"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://lawd.info/ontology/embodies -->
 
     <owl:ObjectProperty rdf:about="http://lawd.info/ontology/embodies">
@@ -71,6 +80,15 @@
       Work it embodies</rdfs:comment>
         <rdfs:range rdf:resource="http://lawd.info/ontology/ConceptualWork"/>
         <rdfs:domain rdf:resource="http://lawd.info/ontology/WrittenWork"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lawd.info/ontology/father -->
+
+    <owl:ObjectProperty rdf:about="http://lawd.info/ontology/father">
+        <rdfs:range rdf:resource="http://lawd.info/ontology/Person"/>
+        <rdfs:domain rdf:resource="http://lawd.info/ontology/Relationship"/>
     </owl:ObjectProperty>
     
 
@@ -88,7 +106,9 @@
 
     <owl:ObjectProperty rdf:about="http://lawd.info/ontology/hasAttestation">
         <rdfs:comment xml:lang="en">Indicates an attestation providing evidence for a name, etc.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://lawd.info/ontology/Agent"/>
         <rdfs:range rdf:resource="http://lawd.info/ontology/Attestation"/>
+        <rdfs:domain rdf:resource="http://lawd.info/ontology/Place"/>
     </owl:ObjectProperty>
     
 
@@ -99,6 +119,23 @@
         <rdfs:comment xml:lang="en"></rdfs:comment>
         <rdfs:domain rdf:resource="http://lawd.info/ontology/Attestation"/>
         <rdfs:range rdf:resource="http://lawd.info/ontology/Citation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lawd.info/ontology/hasName -->
+
+    <owl:ObjectProperty rdf:about="http://lawd.info/ontology/hasName">
+        <rdfs:range rdf:resource="http://lawd.info/ontology/Name"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lawd.info/ontology/mother -->
+
+    <owl:ObjectProperty rdf:about="http://lawd.info/ontology/mother">
+        <rdfs:range rdf:resource="http://lawd.info/ontology/Person"/>
+        <rdfs:domain rdf:resource="http://lawd.info/ontology/Relationship"/>
     </owl:ObjectProperty>
     
 
@@ -160,6 +197,15 @@
     
 
 
+    <!-- http://lawd.info/ontology/spouse -->
+
+    <owl:ObjectProperty rdf:about="http://lawd.info/ontology/spouse">
+        <rdfs:range rdf:resource="http://lawd.info/ontology/Person"/>
+        <rdfs:domain rdf:resource="http://lawd.info/ontology/Relationship"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://lawd.info/ontology/witness -->
 
     <owl:ObjectProperty rdf:about="http://lawd.info/ontology/witness">
@@ -189,6 +235,23 @@
     
 
 
+    <!-- http://lawd.info/ontology/primaryForm -->
+
+    <owl:DatatypeProperty rdf:about="http://lawd.info/ontology/primaryForm">
+        <rdfs:domain rdf:resource="http://lawd.info/ontology/Name"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://lawd.info/ontology/variantForm -->
+
+    <owl:DatatypeProperty rdf:about="http://lawd.info/ontology/variantForm">
+        <rdfs:domain rdf:resource="http://lawd.info/ontology/Name"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -197,6 +260,14 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://erlangen-crm.org/current/E21_Person -->
+
+    <rdf:Description rdf:about="&cidoc-crm;E21_Person">
+        <owl:equivalentClass rdf:resource="http://lawd.info/ontology/Person"/>
+    </rdf:Description>
     
 
 
@@ -224,6 +295,12 @@
     
 
 
+    <!-- http://lawd.info/ontology/Agent -->
+
+    <owl:Class rdf:about="http://lawd.info/ontology/Agent"/>
+    
+
+
     <!-- http://lawd.info/ontology/AssembledWork -->
 
     <owl:Class rdf:about="http://lawd.info/ontology/AssembledWork">
@@ -237,7 +314,7 @@
     <!-- http://lawd.info/ontology/Attestation -->
 
     <owl:Class rdf:about="http://lawd.info/ontology/Attestation">
-        <rdfs:comment xml:lang="en">An Attestation models a piece of evidence. Compare sam:SystematicAssertion</rdfs:comment>
+        <rdfs:comment xml:lang="en">An Attestation models a piece of evidence. Typically it is the conjunction of a Citation and an entity like a name or person.</rdfs:comment>
     </owl:Class>
     
 
@@ -261,6 +338,14 @@
     <owl:Class rdf:about="http://lawd.info/ontology/ConceptualWork">
         <rdfs:comment xml:lang="en">A Conceptual Work groups together one or more Written Works which
       have the same intellectual source.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://lawd.info/ontology/Deity -->
+
+    <owl:Class rdf:about="http://lawd.info/ontology/Deity">
+        <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/Agent"/>
     </owl:Class>
     
 
@@ -293,9 +378,55 @@
     
 
 
+    <!-- http://lawd.info/ontology/Name -->
+
+    <owl:Class rdf:about="http://lawd.info/ontology/Name"/>
+    
+
+
+    <!-- http://lawd.info/ontology/NameAttestation -->
+
+    <owl:Class rdf:about="http://lawd.info/ontology/NameAttestation">
+        <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/Attestation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lawd.info/ontology/Person -->
+
+    <owl:Class rdf:about="http://lawd.info/ontology/Person">
+        <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lawd.info/ontology/PersonAttestation -->
+
+    <owl:Class rdf:about="http://lawd.info/ontology/PersonAttestation">
+        <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/Attestation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lawd.info/ontology/PersonalName -->
+
+    <owl:Class rdf:about="http://lawd.info/ontology/PersonalName">
+        <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/Name"/>
+    </owl:Class>
+    
+
+
     <!-- http://lawd.info/ontology/Place -->
 
     <owl:Class rdf:about="http://lawd.info/ontology/Place"/>
+    
+
+
+    <!-- http://lawd.info/ontology/PlaceName -->
+
+    <owl:Class rdf:about="http://lawd.info/ontology/PlaceName">
+        <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/Name"/>
+    </owl:Class>
     
 
 
@@ -312,6 +443,12 @@
     <owl:Class rdf:about="http://lawd.info/ontology/Reference">
         <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/CollationItem"/>
     </owl:Class>
+    
+
+
+    <!-- http://lawd.info/ontology/Relationship -->
+
+    <owl:Class rdf:about="http://lawd.info/ontology/Relationship"/>
     
 
 
