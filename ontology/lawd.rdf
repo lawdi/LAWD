@@ -67,8 +67,10 @@
     <!-- http://lawd.info/ontology/child -->
 
     <owl:ObjectProperty rdf:about="http://lawd.info/ontology/child">
+        <rdfs:comment>Indicates the child in a lawd:Relationship.</rdfs:comment>
         <rdfs:range rdf:resource="http://lawd.info/ontology/Person"/>
         <rdfs:domain rdf:resource="http://lawd.info/ontology/Relationship"/>
+        <rdfs:subPropertyOf rdf:resource="http://lawd.info/ontology/relationshipRole"/>
     </owl:ObjectProperty>
     
 
@@ -87,8 +89,10 @@
     <!-- http://lawd.info/ontology/father -->
 
     <owl:ObjectProperty rdf:about="http://lawd.info/ontology/father">
+        <rdfs:comment>Indicates the father in a lawd:Relationship.</rdfs:comment>
         <rdfs:range rdf:resource="http://lawd.info/ontology/Person"/>
         <rdfs:domain rdf:resource="http://lawd.info/ontology/Relationship"/>
+        <rdfs:subPropertyOf rdf:resource="http://lawd.info/ontology/relationshipRole"/>
     </owl:ObjectProperty>
     
 
@@ -116,7 +120,7 @@
     <!-- http://lawd.info/ontology/hasCitation -->
 
     <owl:ObjectProperty rdf:about="http://lawd.info/ontology/hasCitation">
-        <rdfs:comment xml:lang="en"></rdfs:comment>
+        <rdfs:comment xml:lang="en">Indicates a Citation that contains the source for a lawd:Attestation</rdfs:comment>
         <rdfs:domain rdf:resource="http://lawd.info/ontology/Attestation"/>
         <rdfs:range rdf:resource="http://lawd.info/ontology/Citation"/>
     </owl:ObjectProperty>
@@ -127,6 +131,7 @@
 
     <owl:ObjectProperty rdf:about="http://lawd.info/ontology/hasName">
         <rdfs:range rdf:resource="http://lawd.info/ontology/Name"/>
+        <rdfs:subPropertyOf rdf:resource="http://lawd.info/ontology/relationshipRole"/>
     </owl:ObjectProperty>
     
 
@@ -134,8 +139,10 @@
     <!-- http://lawd.info/ontology/mother -->
 
     <owl:ObjectProperty rdf:about="http://lawd.info/ontology/mother">
+        <rdfs:comment>Indicates the mother in a lawd:Relationship.</rdfs:comment>
         <rdfs:range rdf:resource="http://lawd.info/ontology/Person"/>
         <rdfs:domain rdf:resource="http://lawd.info/ontology/Relationship"/>
+        <rdfs:subPropertyOf rdf:resource="http://lawd.info/ontology/relationshipRole"/>
     </owl:ObjectProperty>
     
 
@@ -153,6 +160,16 @@
 
     <owl:ObjectProperty rdf:about="http://lawd.info/ontology/readingType">
         <rdfs:range rdf:resource="http://lawd.info/ontology/Reading"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lawd.info/ontology/relationshipRole -->
+
+    <owl:ObjectProperty rdf:about="http://lawd.info/ontology/relationshipRole">
+        <rdfs:comment xml:lang="en">Super-property for roles in a lawd:Relationship.</rdfs:comment>
+        <rdfs:range rdf:resource="http://lawd.info/ontology/Person"/>
+        <rdfs:domain rdf:resource="http://lawd.info/ontology/Relationship"/>
     </owl:ObjectProperty>
     
 
@@ -200,8 +217,10 @@
     <!-- http://lawd.info/ontology/spouse -->
 
     <owl:ObjectProperty rdf:about="http://lawd.info/ontology/spouse">
+        <rdfs:comment>Indicates a spouse in a lawd:Relationship.</rdfs:comment>
         <rdfs:range rdf:resource="http://lawd.info/ontology/Person"/>
         <rdfs:domain rdf:resource="http://lawd.info/ontology/Relationship"/>
+        <rdfs:subPropertyOf rdf:resource="http://lawd.info/ontology/relationshipRole"/>
     </owl:ObjectProperty>
     
 
@@ -238,6 +257,7 @@
     <!-- http://lawd.info/ontology/primaryForm -->
 
     <owl:DatatypeProperty rdf:about="http://lawd.info/ontology/primaryForm">
+        <rdfs:comment xml:lang="en">Indicates the primary form of a lawd:Name</rdfs:comment>
         <rdfs:domain rdf:resource="http://lawd.info/ontology/Name"/>
     </owl:DatatypeProperty>
     
@@ -246,6 +266,7 @@
     <!-- http://lawd.info/ontology/variantForm -->
 
     <owl:DatatypeProperty rdf:about="http://lawd.info/ontology/variantForm">
+        <rdfs:comment xml:lang="en">Indicates a variant form of a lawd:Name</rdfs:comment>
         <rdfs:domain rdf:resource="http://lawd.info/ontology/Name"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
     </owl:DatatypeProperty>
@@ -297,7 +318,9 @@
 
     <!-- http://lawd.info/ontology/Agent -->
 
-    <owl:Class rdf:about="http://lawd.info/ontology/Agent"/>
+    <owl:Class rdf:about="http://lawd.info/ontology/Agent">
+        <rdfs:comment xml:lang="en">An Agent is an abstract entity which has agency or is considered capable of acting in some way. Current subclasses include Deities and Persons.</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -448,7 +471,9 @@
 
     <!-- http://lawd.info/ontology/Relationship -->
 
-    <owl:Class rdf:about="http://lawd.info/ontology/Relationship"/>
+    <owl:Class rdf:about="http://lawd.info/ontology/Relationship">
+        <rdfs:comment xml:lang="en">A Relationship models any connection between two lawd:Agents</rdfs:comment>
+    </owl:Class>
     
 
 
