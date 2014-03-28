@@ -112,6 +112,7 @@
     <owl:ObjectProperty rdf:about="http://lawd.info/ontology/foundAt">
         <rdfs:comment xml:lang="en">The place where an artifact was discovered.</rdfs:comment>
         <rdfs:range rdf:resource="http://lawd.info/ontology/Place"/>
+        <rdfs:subPropertyOf rdf:resource="http://lawd.info/ontology/where"/>
     </owl:ObjectProperty>
     
 
@@ -160,6 +161,7 @@
     <owl:ObjectProperty rdf:about="http://lawd.info/ontology/origin">
         <rdfs:comment xml:lang="en">The place where an artifact originated.</rdfs:comment>
         <rdfs:range rdf:resource="http://lawd.info/ontology/Place"/>
+        <rdfs:subPropertyOf rdf:resource="http://lawd.info/ontology/where"/>
     </owl:ObjectProperty>
     
 
@@ -229,6 +231,15 @@
         <rdfs:range rdf:resource="http://lawd.info/ontology/Person"/>
         <rdfs:domain rdf:resource="http://lawd.info/ontology/Relationship"/>
         <rdfs:subPropertyOf rdf:resource="http://lawd.info/ontology/relationshipRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lawd.info/ontology/where -->
+
+    <owl:ObjectProperty rdf:about="http://lawd.info/ontology/where">
+        <rdfs:comment xml:lang="en">Generic location relation.</rdfs:comment>
+        <rdfs:range rdf:resource="http://lawd.info/ontology/Place"/>
     </owl:ObjectProperty>
     
 
