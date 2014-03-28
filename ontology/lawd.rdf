@@ -75,11 +75,21 @@
     
 
 
+    <!-- http://lawd.info/ontology/conjunctOf -->
+
+    <owl:ObjectProperty rdf:about="http://lawd.info/ontology/conjunctOf">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:comment xml:lang="en">Indicates that a piece of evidence (any subclass of lawd:EvidentiaryItem) is joined to another—for example because they co-occur.</rdfs:comment>
+        <rdfs:range rdf:resource="http://lawd.info/ontology/EvidentiaryItem"/>
+        <rdfs:domain rdf:resource="http://lawd.info/ontology/EvidentiaryItem"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://lawd.info/ontology/embodies -->
 
     <owl:ObjectProperty rdf:about="http://lawd.info/ontology/embodies">
-        <rdfs:comment xml:lang="en">The relationship between a Written Work and the abstract Conceptual
-      Work it embodies</rdfs:comment>
+        <rdfs:comment xml:lang="en">The relationship between a Written Work and the abstract Conceptual Work it embodies. For example, the OCT text of Homer&apos;s Iliad&apos;s relationship to the idea of Homer&apos;s Iliad.</rdfs:comment>
         <rdfs:range rdf:resource="http://lawd.info/ontology/ConceptualWork"/>
         <rdfs:domain rdf:resource="http://lawd.info/ontology/WrittenWork"/>
     </owl:ObjectProperty>
@@ -109,10 +119,8 @@
     <!-- http://lawd.info/ontology/hasAttestation -->
 
     <owl:ObjectProperty rdf:about="http://lawd.info/ontology/hasAttestation">
-        <rdfs:comment xml:lang="en">Indicates an attestation providing evidence for a name, etc.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://lawd.info/ontology/Agent"/>
+        <rdfs:comment xml:lang="en">Indicates a lawd:Attestation providing evidence for a name, etc.</rdfs:comment>
         <rdfs:range rdf:resource="http://lawd.info/ontology/Attestation"/>
-        <rdfs:domain rdf:resource="http://lawd.info/ontology/Place"/>
     </owl:ObjectProperty>
     
 
@@ -130,8 +138,8 @@
     <!-- http://lawd.info/ontology/hasName -->
 
     <owl:ObjectProperty rdf:about="http://lawd.info/ontology/hasName">
+        <rdfs:comment xml:lang="en">Indicates that (e.g.) a Person or Place has a lawd:Name that is the range of the property.</rdfs:comment>
         <rdfs:range rdf:resource="http://lawd.info/ontology/Name"/>
-        <rdfs:subPropertyOf rdf:resource="http://lawd.info/ontology/relationshipRole"/>
     </owl:ObjectProperty>
     
 
@@ -337,7 +345,8 @@
     <!-- http://lawd.info/ontology/Attestation -->
 
     <owl:Class rdf:about="http://lawd.info/ontology/Attestation">
-        <rdfs:comment xml:lang="en">An Attestation models a piece of evidence. Typically it is the conjunction of a Citation and an entity like a name or person.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/EvidentiaryItem"/>
+        <rdfs:comment xml:lang="en">An Attestation models a piece of evidence for something in a text (e.g. the mention of a person in a document). Typically it is the conjunction of a Citation and an entity like a name or person.</rdfs:comment>
     </owl:Class>
     
 
@@ -391,6 +400,14 @@
     
 
 
+    <!-- http://lawd.info/ontology/EvidentiaryItem -->
+
+    <owl:Class rdf:about="http://lawd.info/ontology/EvidentiaryItem">
+        <rdfs:comment xml:lang="en">Superclass for types of evidence that support assertions.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://lawd.info/ontology/Hand -->
 
     <owl:Class rdf:about="http://lawd.info/ontology/Hand">
@@ -407,26 +424,10 @@
     
 
 
-    <!-- http://lawd.info/ontology/NameAttestation -->
-
-    <owl:Class rdf:about="http://lawd.info/ontology/NameAttestation">
-        <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/Attestation"/>
-    </owl:Class>
-    
-
-
     <!-- http://lawd.info/ontology/Person -->
 
     <owl:Class rdf:about="http://lawd.info/ontology/Person">
         <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/Agent"/>
-    </owl:Class>
-    
-
-
-    <!-- http://lawd.info/ontology/PersonAttestation -->
-
-    <owl:Class rdf:about="http://lawd.info/ontology/PersonAttestation">
-        <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/Attestation"/>
     </owl:Class>
     
 
