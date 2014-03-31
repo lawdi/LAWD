@@ -58,6 +58,56 @@ used to indicate the source of a `WrittenWork` (which will be one or more `Writt
 #### `representedBy`
 These relate `Citation`s to `WrittenWork`s
 
+## Modeling Persons and Names
+
+### Classes
+#### `Agent`
+##### subclasses: `Person`, `Deity`, `Association`
+An Agent is an abstract entity which has agency or is considered capable of acting in some way.
+
+#### `Person`
+#### ≣ crm:E21_Person
+
+#### `Deity`
+
+#### `CorporateBody`
+
+#### `Name`
+##### subclasses: `PersonalName`, `PlaceName`
+An abstract name, which has one or more primary forms and any number of variant forms.
+
+#### `PersonalName`
+A name belonging to a `lawd:Person`
+
+#### `PlaceName`
+A name belonging to a `lawd:Place`
+
+### Data Properties
+
+#### `primaryForm`
+Indicates the primary form of a `Name`
+
+#### `variantForm`
+Indicates a variant form of a `Name`
+
+## Modeling Evidence
+
+### Classes
+#### `EvidentiaryItem`
+##### subclasses: `
+A superclass for types of evidence.
+
+#### `Attestation`
+An Attestation models a piece of evidence for something in a text (e.g. the mention of a person in a document). Typically it is the conjunction of a Citation and an entity like a name or person.
+
+### Object Properties
+
+#### `hasCitation`
+Indicates a `Citation` that refers to the source for an `Attestation`
+
+#### `hasAttestation`
+Indicates an `Attestation` providing evidence for a `Name`, `Person`, etc.
+
 ## Modeling the relationship of artifacts to places
 
 ### Classes
