@@ -28,7 +28,7 @@ The idea of a work, which may have any number of written expressions (which may 
 Analogous to a Work in FRBR.  
 
 #### `WrittenWork`
-#### ≣ crm:E33_Linguistic_Object
+#### ≣ `crm:E33_Linguistic_Object`
 ##### subclasses: `AssembledWork`, `Edition`, `Translation`, `Hand`
 A written work (whether extant or not) that is a version of a `ConceptualWork`. Subclasses are `AssembledWork`, 
 `Edition`, `Translation`, and `Hand`. A `WrittenWork` may be part of another `WrittenWork` (e.g. a manuscript 
@@ -66,7 +66,7 @@ These relate `Citation`s to `WrittenWork`s
 An Agent is an abstract entity which has agency or is considered capable of acting in some way.
 
 #### `Person`
-#### ≣ crm:E21_Person
+#### ≣ `crm:E21_Person`
 
 #### `Deity`
 
@@ -111,9 +111,9 @@ Indicates an `Attestation` providing evidence for a `Name`, `Person`, etc.
 ## Modeling the relationship of artifacts to places
 
 ### Classes
-#### Place
-#### ≣ crm:E27_Site
-#### ≣ geo:Feature
+#### `Place`
+#### ≣ `crm:E27_Site`
+#### ≣ `geo:Feature`
 
 ### Object Properties
 
@@ -128,7 +128,7 @@ Range: `Place`
 
 ### Object Properties
 
-#### ≣ crm:P2_has_type
+#### ≣ `crm:P2_has_type`
 
 
 ## Modeling collation and critical apparatus:
