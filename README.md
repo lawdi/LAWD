@@ -52,8 +52,6 @@ Range: `ConceptualWork`
 #### `dct:source`
 used to indicate the source of a `WrittenWork` (which will be one or more `WrittenWork`s)
 
-### Object Properties
-
 #### `represents`
 #### `representedBy`
 These relate `Citation`s to `WrittenWork`s
