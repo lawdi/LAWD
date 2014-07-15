@@ -5,7 +5,7 @@ An ontology for Linked Ancient World Data
 
 The goal of LAWD is to fill in the cracks between the data used and published by projects with a focus on the 
 ancient world and the standard Linked Data vocablary schemes, like Dublin Core, the Open Annotation Collaboration, 
-and CIDOC-CRM. LAWD will accomplishe this by defining just enough new classes and properties to permit the semantic 
+and CIDOC-CRM. LAWD will accomplish this by defining just enough new classes and properties to permit the semantic 
 modeling of things like manuscript collation, relating provenance to geography, and prosopography. 
 
 ### namespace: http://lawd.info/ontology/ 
@@ -60,15 +60,13 @@ These relate `Citation`s to `WrittenWork`s
 
 ### Classes
 #### `Agent`
-##### subclasses: `Person`, `Deity`, `Association`
+##### subclasses: `Person`, `Deity`
 An Agent is an abstract entity which has agency or is considered capable of acting in some way.
 
 #### `Person`
 #### ≣ `crm:E21_Person`
 
 #### `Deity`
-
-#### `CorporateBody`
 
 #### `Name`
 ##### subclasses: `PersonalName`, `PlaceName`
@@ -92,7 +90,7 @@ Indicates a variant form of a `Name`
 
 ### Classes
 #### `EvidentiaryItem`
-##### subclasses: `
+##### subclasses: `Attestation`
 A superclass for types of evidence.
 
 #### `Attestation`
