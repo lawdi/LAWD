@@ -15,18 +15,24 @@
 <rdf:RDF xmlns="http://lawd.info/ontology/"
      xml:base="http://lawd.info/ontology/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/terms/"
      xmlns:geo="http://geovocab.org/spatial#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:cidoc-crm="http://erlangen-crm.org/current/"
-     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vann/">
     <owl:Ontology rdf:about="http://lawd.info/ontology/">
+        <dc:title>Linking Ancient World Data Ontology</dc:title>
+        <dc:description>The goal of LAWD is to fill in the cracks between the data used and published by projects with a focus on the ancient world and the standard Linked Data vocablary schemes, like Dublin Core, the Open Annotation Collaboration, and CIDOC-CRM.</dc:description>
         <owl:imports rdf:resource="http://erlangen-crm.org/current/"/>
         <owl:versionIRI rdf:resource="http://lawd.info/ontology/1.0/"/>
         <owl:imports rdf:resource="http://purl.org/ontology/olo/core#"/>
         <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
         <owl:imports rdf:resource="http://www.w3.org/ns/oa#"/>
+        <vann:preferredNamespacePrefix>lawd</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>http://lawd.info/ontology/</vann:preferredNamespaceUri>
     </owl:Ontology>
     
 
