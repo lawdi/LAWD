@@ -22,7 +22,7 @@
      xmlns:geo="http://geovocab.org/spatial#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:vann="http://purl.org/vann/"
+     xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:voaf="http://purl.org/vocommons/voaf#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:cidoc-crm="http://erlangen-crm.org/current/"
