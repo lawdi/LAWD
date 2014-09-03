@@ -23,11 +23,13 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:vann="http://purl.org/vann/"
+     xmlns:voaf="http://purl.org/vocommons/voaf#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:cidoc-crm="http://erlangen-crm.org/current/"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:cc="http://creativecommons.org/ns#">
     <owl:Ontology rdf:about="http://lawd.info/ontology/">
+        <rdf:type rdf:resource="http://purl.org/vocommons/voaf#Vocabulary"/>
         <dc:title>Linking Ancient World Data Ontology</dc:title>
         <dc:issued>2013-03-28</dc:issued>
         <dc:rights>Copyright © 2013 Hugh A. Cayless</dc:rights>
