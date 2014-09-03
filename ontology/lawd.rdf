@@ -2,7 +2,10 @@
 
 
 <!DOCTYPE rdf:RDF [
+    <!ENTITY vann "http://purl.org/vann/" >
+    <!ENTITY dc "http://purl.org/dc/terms/" >
     <!ENTITY geo "http://geovocab.org/spatial#" >
+    <!ENTITY cc "http://creativecommons.org/ns#" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY cidoc-crm "http://erlangen-crm.org/current/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
@@ -14,30 +17,30 @@
 
 <rdf:RDF xmlns="http://lawd.info/ontology/"
      xml:base="http://lawd.info/ontology/"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:cc="http://creativecommons.org/ns#"
      xmlns:dc="http://purl.org/dc/terms/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:geo="http://geovocab.org/spatial#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:vann="http://purl.org/vann/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:cidoc-crm="http://erlangen-crm.org/current/"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:vann="http://purl.org/vann/">
+     xmlns:cc="http://creativecommons.org/ns#">
     <owl:Ontology rdf:about="http://lawd.info/ontology/">
         <dc:title>Linking Ancient World Data Ontology</dc:title>
-        <dc:description>The goal of LAWD is to fill in the cracks between the data used and published by projects with a focus on the ancient world and the standard Linked Data vocablary schemes, like Dublin Core, the Open Annotation Collaboration, and CIDOC-CRM.</dc:description>
         <dc:issued>2013-03-28</dc:issued>
-        <dc:modified>2014-09-03</dc:modified>
         <dc:rights>Copyright © 2013 Hugh A. Cayless</dc:rights>
+        <vann:preferredNamespacePrefix>lawd</vann:preferredNamespacePrefix>
+        <dc:modified>2014-09-03</dc:modified>
+        <dc:description>The goal of LAWD is to fill in the cracks between the data used and published by projects with a focus on the ancient world and the standard Linked Data vocablary schemes, like Dublin Core, the Open Annotation Collaboration, and CIDOC-CRM.</dc:description>
+        <vann:preferredNamespaceUri>http://lawd.info/ontology/</vann:preferredNamespaceUri>
         <cc:license rdf:resource="http://creativecommons.org/license/by/3.0/"/>
         <owl:imports rdf:resource="http://erlangen-crm.org/current/"/>
         <owl:versionIRI rdf:resource="http://lawd.info/ontology/1.0/"/>
         <owl:imports rdf:resource="http://purl.org/ontology/olo/core#"/>
         <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
         <owl:imports rdf:resource="http://www.w3.org/ns/oa#"/>
-        <vann:preferredNamespacePrefix>lawd</vann:preferredNamespacePrefix>
-        <vann:preferredNamespaceUri>http://lawd.info/ontology/</vann:preferredNamespaceUri>
     </owl:Ontology>
     
 
@@ -50,17 +53,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://lawd.info/ontology/child -->
-
-    <owl:ObjectProperty rdf:about="http://lawd.info/ontology/child">
-        <rdfs:comment>Indicates the child in a lawd:Relationship.</rdfs:comment>
-        <rdfs:range rdf:resource="http://lawd.info/ontology/Person"/>
-        <rdfs:domain rdf:resource="http://lawd.info/ontology/Relationship"/>
-        <rdfs:subPropertyOf rdf:resource="http://lawd.info/ontology/relationshipRole"/>
-    </owl:ObjectProperty>
     
 
 
@@ -81,17 +73,6 @@
         <rdfs:comment xml:lang="en">The relationship between a Written Work and the abstract Conceptual Work it embodies. For example, the OCT text of Homer&apos;s Iliad&apos;s relationship to the idea of Homer&apos;s Iliad.</rdfs:comment>
         <rdfs:range rdf:resource="http://lawd.info/ontology/ConceptualWork"/>
         <rdfs:domain rdf:resource="http://lawd.info/ontology/WrittenWork"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://lawd.info/ontology/father -->
-
-    <owl:ObjectProperty rdf:about="http://lawd.info/ontology/father">
-        <rdfs:comment>Indicates the father in a lawd:Relationship.</rdfs:comment>
-        <rdfs:range rdf:resource="http://lawd.info/ontology/Person"/>
-        <rdfs:domain rdf:resource="http://lawd.info/ontology/Relationship"/>
-        <rdfs:subPropertyOf rdf:resource="http://lawd.info/ontology/relationshipRole"/>
     </owl:ObjectProperty>
     
 
@@ -134,17 +115,6 @@
     
 
 
-    <!-- http://lawd.info/ontology/mother -->
-
-    <owl:ObjectProperty rdf:about="http://lawd.info/ontology/mother">
-        <rdfs:comment>Indicates the mother in a lawd:Relationship.</rdfs:comment>
-        <rdfs:range rdf:resource="http://lawd.info/ontology/Person"/>
-        <rdfs:domain rdf:resource="http://lawd.info/ontology/Relationship"/>
-        <rdfs:subPropertyOf rdf:resource="http://lawd.info/ontology/relationshipRole"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://lawd.info/ontology/origin -->
 
     <owl:ObjectProperty rdf:about="http://lawd.info/ontology/origin">
@@ -159,16 +129,6 @@
 
     <owl:ObjectProperty rdf:about="http://lawd.info/ontology/readingType">
         <rdfs:range rdf:resource="http://lawd.info/ontology/Reading"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://lawd.info/ontology/relationshipRole -->
-
-    <owl:ObjectProperty rdf:about="http://lawd.info/ontology/relationshipRole">
-        <rdfs:comment xml:lang="en">Super-property for roles in a lawd:Relationship.</rdfs:comment>
-        <rdfs:range rdf:resource="http://lawd.info/ontology/Person"/>
-        <rdfs:domain rdf:resource="http://lawd.info/ontology/Relationship"/>
     </owl:ObjectProperty>
     
 
@@ -225,17 +185,6 @@
     
 
 
-    <!-- http://lawd.info/ontology/spouse -->
-
-    <owl:ObjectProperty rdf:about="http://lawd.info/ontology/spouse">
-        <rdfs:comment>Indicates a spouse in a lawd:Relationship.</rdfs:comment>
-        <rdfs:range rdf:resource="http://lawd.info/ontology/Person"/>
-        <rdfs:domain rdf:resource="http://lawd.info/ontology/Relationship"/>
-        <rdfs:subPropertyOf rdf:resource="http://lawd.info/ontology/relationshipRole"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://lawd.info/ontology/where -->
 
     <owl:ObjectProperty rdf:about="http://lawd.info/ontology/where">
@@ -248,6 +197,7 @@
     <!-- http://lawd.info/ontology/witness -->
 
     <owl:ObjectProperty rdf:about="http://lawd.info/ontology/witness">
+        <rdfs:comment xml:lang="en">(Experimental) Connects an item in a collation to the witness it derives from.</rdfs:comment>
         <rdfs:domain rdf:resource="http://lawd.info/ontology/CollationItem"/>
         <rdfs:range rdf:resource="http://lawd.info/ontology/Siglum"/>
     </owl:ObjectProperty>
@@ -373,7 +323,9 @@
 
     <!-- http://lawd.info/ontology/CollationItem -->
 
-    <owl:Class rdf:about="http://lawd.info/ontology/CollationItem"/>
+    <owl:Class rdf:about="http://lawd.info/ontology/CollationItem">
+        <rdfs:comment>(Experimental) Part of a collation of witnesses to a text.</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -381,7 +333,7 @@
 
     <owl:Class rdf:about="http://lawd.info/ontology/ConceptualWork">
         <rdfs:comment xml:lang="en">A Conceptual Work groups together one or more Written Works which
-      have the same intellectual source.</rdfs:comment>
+      have the same intellectual source. E.g. The Iliad, as opposed to a particular manuscript witness or edition of the Iliad.</rdfs:comment>
     </owl:Class>
     
 
@@ -390,6 +342,7 @@
 
     <owl:Class rdf:about="http://lawd.info/ontology/Deity">
         <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/Agent"/>
+        <rdfs:comment>Any divine Agent.</rdfs:comment>
     </owl:Class>
     
 
@@ -430,6 +383,15 @@
     
 
 
+    <!-- http://lawd.info/ontology/MythologicalCreature -->
+
+    <owl:Class rdf:about="http://lawd.info/ontology/MythologicalCreature">
+        <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/Agent"/>
+        <rdfs:comment>Class for non-human, non-divine Agents, e.g. Polyphemus or Medusa.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://lawd.info/ontology/Name -->
 
     <owl:Class rdf:about="http://lawd.info/ontology/Name">
@@ -442,6 +404,7 @@
 
     <owl:Class rdf:about="http://lawd.info/ontology/Person">
         <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/Agent"/>
+        <rdfs:comment>Any person, whether historical, mythological, or fictional</rdfs:comment>
     </owl:Class>
     
 
@@ -450,13 +413,16 @@
 
     <owl:Class rdf:about="http://lawd.info/ontology/PersonalName">
         <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/Name"/>
+        <rdfs:comment xml:lang="en">A name belonging to a lawd:Person</rdfs:comment>
     </owl:Class>
     
 
 
     <!-- http://lawd.info/ontology/Place -->
 
-    <owl:Class rdf:about="http://lawd.info/ontology/Place"/>
+    <owl:Class rdf:about="http://lawd.info/ontology/Place">
+        <rdfs:comment xml:lang="en">Any conceivable place, such as a town, a mountain, or the site of a building.</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -464,6 +430,7 @@
 
     <owl:Class rdf:about="http://lawd.info/ontology/PlaceName">
         <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/Name"/>
+        <rdfs:comment xml:lang="en">The name of a lawd:Place</rdfs:comment>
     </owl:Class>
     
 
@@ -472,6 +439,7 @@
 
     <owl:Class rdf:about="http://lawd.info/ontology/Reading">
         <rdfs:subClassOf rdf:resource="&skos;Concept"/>
+        <rdfs:comment xml:lang="en">(Experimental) The superclass for members of the readingScheme concept scheme. A Reading is a word, phrase, or larger chunk of text from a witness (or any observation of variance concerning the text, such as an omission or interpolation).</rdfs:comment>
     </owl:Class>
     
 
@@ -480,14 +448,6 @@
 
     <owl:Class rdf:about="http://lawd.info/ontology/Reference">
         <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/CollationItem"/>
-    </owl:Class>
-    
-
-
-    <!-- http://lawd.info/ontology/Relationship -->
-
-    <owl:Class rdf:about="http://lawd.info/ontology/Relationship">
-        <rdfs:comment xml:lang="en">A Relationship models any connection between two lawd:Agents</rdfs:comment>
     </owl:Class>
     
 
@@ -517,8 +477,7 @@
 
     <owl:Class rdf:about="http://lawd.info/ontology/Translation">
         <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/WrittenWork"/>
-        <rdfs:comment xml:lang="en">A Written Work that translates one or more other Written Works with
-      the same Conceptual Work source.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A Written Work that translates one or more other Written Works that embody the same Conceptual Work.</rdfs:comment>
     </owl:Class>
     
 
@@ -526,8 +485,7 @@
     <!-- http://lawd.info/ontology/WrittenWork -->
 
     <owl:Class rdf:about="http://lawd.info/ontology/WrittenWork">
-        <rdfs:comment xml:lang="en">A written work, whether extant or not that is a version of a
-      Conceptual Work.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A written work, whether extant or not. May be considered to embody a Conceptual Work.</rdfs:comment>
     </owl:Class>
     
 
@@ -634,7 +592,9 @@
 
     <!-- http://lawd.info/ontology/readingScheme -->
 
-    <owl:NamedIndividual rdf:about="http://lawd.info/ontology/readingScheme"/>
+    <owl:NamedIndividual rdf:about="http://lawd.info/ontology/readingScheme">
+        <rdfs:comment xml:lang="en">(Experimental) The SKOS scheme for classifying types of lawd:Reading.</rdfs:comment>
+    </owl:NamedIndividual>
     
 
 
