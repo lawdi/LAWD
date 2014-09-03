@@ -15,6 +15,7 @@
 <rdf:RDF xmlns="http://lawd.info/ontology/"
      xml:base="http://lawd.info/ontology/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:cc="http://creativecommons.org/ns#"
      xmlns:dc="http://purl.org/dc/terms/"
      xmlns:geo="http://geovocab.org/spatial#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -26,6 +27,10 @@
     <owl:Ontology rdf:about="http://lawd.info/ontology/">
         <dc:title>Linking Ancient World Data Ontology</dc:title>
         <dc:description>The goal of LAWD is to fill in the cracks between the data used and published by projects with a focus on the ancient world and the standard Linked Data vocablary schemes, like Dublin Core, the Open Annotation Collaboration, and CIDOC-CRM.</dc:description>
+        <dc:issued>2013-03-28</dc:issued>
+        <dc:modified>2014-09-03</dc:modified>
+        <dc:rights>Copyright © 2013 Hugh A. Cayless</dc:rights>
+        <cc:license rdf:resource="http://creativecommons.org/license/by/3.0/"/>
         <owl:imports rdf:resource="http://erlangen-crm.org/current/"/>
         <owl:versionIRI rdf:resource="http://lawd.info/ontology/1.0/"/>
         <owl:imports rdf:resource="http://purl.org/ontology/olo/core#"/>
