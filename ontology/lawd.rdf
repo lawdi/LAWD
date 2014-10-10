@@ -190,7 +190,8 @@
     <!-- http://lawd.info/ontology/where -->
 
     <owl:ObjectProperty rdf:about="http://lawd.info/ontology/where">
-        <rdfs:comment xml:lang="en">Generic location relation.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Generic location relation. Useful when the nature of the related place 
+            (e.g. origin, findspot) is not clear.</rdfs:comment>
         <rdfs:range rdf:resource="http://lawd.info/ontology/Place"/>
     </owl:ObjectProperty>
     
@@ -371,6 +372,15 @@
 
     <owl:Class rdf:about="http://lawd.info/ontology/EvidentiaryItem">
         <rdfs:comment xml:lang="en">Superclass for types of evidence that support assertions.</rdfs:comment>
+    </owl:Class>
+    
+    
+    
+    <!-- http://lawd.info/ontology/Group -->
+    
+    <owl:Class rdf:about="http://lawd.info/ontology/Group">
+        <rdfs:subClassOf rdf:resource="http://lawd.info/ontology/Agent"/>
+        <rdfs:comment>Any group of Agents referred to as a single entity.</rdfs:comment>
     </owl:Class>
     
 
