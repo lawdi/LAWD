@@ -59,12 +59,20 @@ These relate `Citation`s to `WrittenWork`s
 
 ### Classes
 #### `Agent`
-##### subclasses: `Person`, `Deity`
+##### subclasses: `Person`, `Group`, `Deity`, `MythologicalCreature`
 An Agent is an abstract entity which has agency or is considered capable of acting in some way.
 
 #### `Person` = `crm:E21_Person`
+Any person, whether real or fictional.
+
+#### `Group`
+Any group, association, family, etc. which may be referred to as a single entity.
 
 #### `Deity`
+Any god.
+
+#### `MythologicalCreature`
+Any creature from myth that does not fit the definition of Deity or Person. E.g. Kerberos.
 
 #### `Name`
 ##### subclasses: `PersonalName`, `PlaceName`
