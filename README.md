@@ -69,7 +69,7 @@ Any person, whether real or fictional.
 Any group, association, family, etc. which may be referred to as a single entity.
 
 #### `Deity`
-Any god.
+Any god, divinity or other divine being from myth or cult
 
 #### `MythologicalCreature`
 Any creature from myth that does not fit the definition of Deity or Person. E.g. Kerberos.
