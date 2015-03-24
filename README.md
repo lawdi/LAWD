@@ -52,14 +52,14 @@ Range: `ConceptualWork`
 used to indicate the source of a `WrittenWork` (which will be one or more `WrittenWork`s)
 
 #### `represents`
-#### `representedBy`
+Domain: `Citation`, Range: `WrittenWork`
 These relate `Citation`s to `WrittenWork`s
 
 ## Modeling Persons and Names
 
 ### Classes
 #### `Agent`
-##### subclasses: `Person`, `Group`, `Deity`, `MythologicalCreature`
+##### subclasses: `Person`, `Group`, `Deity`
 An Agent is an abstract entity which has agency or is considered capable of acting in some way.
 
 #### `Person` = `crm:E21_Person`
@@ -71,9 +71,6 @@ Any group, association, family, etc. which may be referred to as a single entity
 #### `Deity`
 Any god, divinity or other sacred being from myth or cult
 
-#### `MythologicalCreature`
-Any creature from myth that does not fit the definition of Deity or Person. E.g. Kerberos.
-
 #### `Name`
 ##### subclasses: `PersonalName`, `PlaceName`
 An abstract name, which has one or more primary forms and any number of variant forms.
@@ -83,6 +80,12 @@ A name belonging to a `lawd:Person`
 
 #### `PlaceName`
 A name belonging to a `lawd:Place`
+
+### Object Properties
+
+#### `hasName`
+Range: `Name`
+Indicates that (e.g.) a Person or Place has a lawd:Name that is the range of the property.
 
 ### Data Properties
 
@@ -119,9 +122,15 @@ Indicates an `Attestation` providing evidence for a `Name`, `Person`, etc.
 
 #### `origin`
 Range: `Place`
+The place where an artifact originated.
 
 #### `foundAt`
 Range: `Place`
+The place where an artifact was found.
+
+#### `where`
+Range: `Place`
+Generic location relation. Can be used when the nature of the connection to a place is unclear.
 
 ## Modeling the relationship of artifacts to existing typologies
 
