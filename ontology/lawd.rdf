@@ -469,10 +469,33 @@
     <!-- http://lawd.info/ontology/Observation -->
 
     <owl:Class rdf:about="http://lawd.info/ontology/Observation">
+        <rdfs:label>Observation</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#qualifiedAssociation"/>
+                <owl:someValuesFrom rdf:resource="http://lawd.info/ontology/ObserverRoleAssociation"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
     </owl:Class>
     
 
+
+    <!-- http://lawd.info/ontology/ObserverRoleAssociation -->
+
+    <owl:Class rdf:about="http://lawd.info/ontology/ObserverRoleAssociation">
+        <rdfs:label>Observer Role Association</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#hadRole"/>
+                <owl:hasValue rdf:resource="http://lawd.info/ontology/observerRole"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Association"/>
+        <rdfs:comment>An instance of lawd:ObserverRoleAssociation characterizes a prov:Agent&apos;s association to a prov:Activity as serving in a lawd:observer role.</rdfs:comment>
+    </owl:Class>
+
+	
 
     <!-- http://lawd.info/ontology/Person -->
 
@@ -688,6 +711,16 @@
         <rdf:type rdf:resource="http://lawd.info/ontology/Reading"/>
         <skos:inScheme rdf:resource="http://lawd.info/ontology/readingScheme"/>
         <skos:broader rdf:resource="http://lawd.info/ontology/variant"/>
+    </owl:NamedIndividual>
+
+    
+
+    <!-- http://lawd.info/ontology/observerRole -->
+
+    <owl:NamedIndividual rdf:about="http://lawd.info/ontology/observerRole">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Role"/>
+        <rdfs:label>observer role</rdfs:label>
+        <rdfs:comment>The role of justifying a claim by appealing  to observed evidence.</rdfs:comment>
     </owl:NamedIndividual>
     
 
