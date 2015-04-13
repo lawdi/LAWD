@@ -58,9 +58,9 @@ These relate `Citation`s to `WrittenWork`s
 ## Modeling Persons and Names
 
 ### Classes
-#### `Agent`
+#### `Agent` = `prov:Agent`
 ##### subclasses: `Person`, `Group`, `Deity`
-An Agent is an abstract entity which has agency or is considered capable of acting in some way.
+An Agent is an abstract entity which has agency or is considered capable of acting in some way. LAWD Agents are equivalent to PROV-O Agents.
 
 #### `Person` = `crm:E21_Person`
 Any person, whether real or fictional.
@@ -98,12 +98,19 @@ Indicates a variant form of a `Name`
 ## Modeling Evidence
 
 ### Classes
+#### `prov:Activity`
+#### `Observation`
+##### subclasses: `EvidentiaryItem`, `TextReuse`
+An Observation is a scholarly assertion. There are two subclasses, dealing with the identification of evidence and the observation of textual reuse (e.g. quotation, summary, or allusion).
 #### `EvidentiaryItem`
 ##### subclasses: `Attestation`
 A superclass for types of evidence.
 
 #### `Attestation`
 An Attestation models a piece of evidence for something in a text (e.g. the mention of a person in a document). Typically it is the conjunction of a Citation and an entity like a name or person.
+
+#### `TextReuse`
+TextReuse models an instance where on author quotes, summarizes, alludes to, or otherwise re-uses language in a text that comes from another text.
 
 ### Object Properties
 
@@ -112,6 +119,12 @@ Indicates a `Citation` that refers to the source for an `Attestation`
 
 #### `hasAttestation`
 Indicates an `Attestation` providing evidence for a `Name`, `Person`, etc.
+
+#### `reuseFrom`
+Links from a `TextReuse` instance to a `Citation` of the work from which the reused text came.
+
+#### `reuseIn`
+Links from a `TextReuse` instance to a `Citation` of the work in which the reused text appears.
 
 ## Modeling the relationship of artifacts to places
 

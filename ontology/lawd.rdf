@@ -30,13 +30,13 @@
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:cc="http://creativecommons.org/ns#">
     <owl:Ontology rdf:about="http://lawd.info/ontology/">
-        <dc:description>The goal of LAWD is to fill in the cracks between the data used and published by projects with a focus on the ancient world and the standard Linked Data vocablary schemes, like Dublin Core, the Open Annotation Collaboration, and CIDOC-CRM.</dc:description>
-        <dc:modified>2014-09-03</dc:modified>
-        <dc:rights>Copyright © 2013 Hugh A. Cayless</dc:rights>
-        <vann:preferredNamespaceUri>http://lawd.info/ontology/</vann:preferredNamespaceUri>
-        <dc:issued>2013-03-28</dc:issued>
-        <vann:preferredNamespacePrefix>lawd</vann:preferredNamespacePrefix>
         <dc:title>Linking Ancient World Data Ontology</dc:title>
+        <vann:preferredNamespacePrefix>lawd</vann:preferredNamespacePrefix>
+        <dc:issued>2013-03-28</dc:issued>
+        <vann:preferredNamespaceUri>http://lawd.info/ontology/</vann:preferredNamespaceUri>
+        <dc:rights>Copyright © 2013 Hugh A. Cayless</dc:rights>
+        <dc:modified>2014-09-03</dc:modified>
+        <dc:description>The goal of LAWD is to fill in the cracks between the data used and published by projects with a focus on the ancient world and the standard Linked Data vocablary schemes, like Dublin Core, the Open Annotation Collaboration, and CIDOC-CRM.</dc:description>
         <cc:license rdf:resource="http://creativecommons.org/license/by/3.0/"/>
         <owl:imports rdf:resource="http://erlangen-crm.org/current/"/>
         <owl:versionIRI rdf:resource="http://lawd.info/ontology/1.0/"/>
@@ -51,51 +51,11 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Datatypes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://lawd.info/ontology/citedReuseFrom -->
-
-    <owl:ObjectProperty rdf:about="http://lawd.info/ontology/citedReuseFrom">
-        <rdfs:range rdf:resource="http://lawd.info/ontology/Citation"/>
-        <rdfs:domain rdf:resource="http://lawd.info/ontology/TextReuse"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://lawd.info/ontology/citedReuseIn -->
-
-    <owl:ObjectProperty rdf:about="http://lawd.info/ontology/citedReuseIn">
-        <rdfs:range rdf:resource="http://lawd.info/ontology/Citation"/>
-        <rdfs:domain rdf:resource="http://lawd.info/ontology/TextReuse"/>
-    </owl:ObjectProperty>
     
 
 
@@ -221,9 +181,9 @@
     <!-- http://lawd.info/ontology/reuseFrom -->
 
     <owl:ObjectProperty rdf:about="http://lawd.info/ontology/reuseFrom">
-        <rdfs:comment xml:lang="en">Links an instance of text re-use to the WrittenWork from which the text came.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Links an instance of text reuse to a citation of the work from which the text came.</rdfs:comment>
+        <rdfs:range rdf:resource="http://lawd.info/ontology/Citation"/>
         <rdfs:domain rdf:resource="http://lawd.info/ontology/TextReuse"/>
-        <rdfs:range rdf:resource="http://lawd.info/ontology/WrittenWork"/>
     </owl:ObjectProperty>
     
 
@@ -231,9 +191,9 @@
     <!-- http://lawd.info/ontology/reuseIn -->
 
     <owl:ObjectProperty rdf:about="http://lawd.info/ontology/reuseIn">
-        <rdfs:comment xml:lang="en">Links an instance of text re-use to the WrittenWork in which the re-use occurred.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Links an instance of text reuse to a citation of the work in which the reuse appears.</rdfs:comment>
+        <rdfs:range rdf:resource="http://lawd.info/ontology/Citation"/>
         <rdfs:domain rdf:resource="http://lawd.info/ontology/TextReuse"/>
-        <rdfs:range rdf:resource="http://lawd.info/ontology/WrittenWork"/>
     </owl:ObjectProperty>
     
 
@@ -477,6 +437,7 @@
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <rdfs:comment xml:lang="en">An Observation is a scholarly assertion based on looking at evidence. An Observation might state, for example, that an entity provides evidence for the existence of a person or that a text quotes from another text.</rdfs:comment>
     </owl:Class>
     
 
@@ -494,8 +455,8 @@
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Association"/>
         <rdfs:comment>An instance of lawd:ObserverRoleAssociation characterizes a prov:Agent&apos;s association to a prov:Activity as serving in a lawd:observer role.</rdfs:comment>
     </owl:Class>
+    
 
-	
 
     <!-- http://lawd.info/ontology/Person -->
 
@@ -712,8 +673,8 @@
         <skos:inScheme rdf:resource="http://lawd.info/ontology/readingScheme"/>
         <skos:broader rdf:resource="http://lawd.info/ontology/variant"/>
     </owl:NamedIndividual>
-
     
+
 
     <!-- http://lawd.info/ontology/observerRole -->
 
@@ -772,5 +733,5 @@
 
 
 
-<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
 
