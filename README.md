@@ -10,13 +10,15 @@ modeling of things like manuscript collation, relating provenance to geography, 
 
 ### namespace: http://lawd.info/ontology/ 
 ### prefixes:
-dc: http://purl.org/dc/elements/1.1
+dc: http://purl.org/dc/elements/1.1 (Dublin Core Elements)
 
-dct: http://purl.org/dc/terms/
+dct: http://purl.org/dc/terms/ (Dublin Core Terms)
 
-crm: http://www.cidoc-crm.org/cidoc-crm/
+crm: http://www.cidoc-crm.org/cidoc-crm/ (CIDOC Conceptual Reference Model) 
 
-geo: http://geovocab.org/spatial#
+geo: http://geovocab.org/spatial# (GeoVocab.org)
+
+prov: http://www.w3.org/ns/prov# (PROV-O, the Provenance Ontology)
 
 
 ## Modeling written works:
