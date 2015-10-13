@@ -114,6 +114,8 @@ An Attestation models a piece of evidence for something in a text (e.g. the ment
 #### `TextReuse`
 TextReuse models an instance where on author quotes, summarizes, alludes to, or otherwise re-uses language in a text that comes from another text.
 
+An `rdf:value` property on an `EvidentiaryItem` may be used to provide the text of, e.g., the attestation or reuse.
+
 ### Object Properties
 
 #### `hasCitation`
