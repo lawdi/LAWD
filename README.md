@@ -10,13 +10,15 @@ modeling of things like manuscript collation, relating provenance to geography, 
 
 ### namespace: http://lawd.info/ontology/ 
 ### prefixes:
-dc: http://purl.org/dc/elements/1.1
+dc: http://purl.org/dc/elements/1.1 (Dublin Core Elements)
 
-dct: http://purl.org/dc/terms/
+dct: http://purl.org/dc/terms/ (Dublin Core Terms)
 
-crm: http://www.cidoc-crm.org/cidoc-crm/
+crm: http://www.cidoc-crm.org/cidoc-crm/ (CIDOC Conceptual Reference Model) 
 
-geo: http://geovocab.org/spatial#
+geo: http://geovocab.org/spatial# (GeoVocab.org)
+
+prov: http://www.w3.org/ns/prov# (PROV-O, the Provenance Ontology)
 
 
 ## Modeling written works:
@@ -109,6 +111,8 @@ An Attestation models a piece of evidence for something in a text (e.g. the ment
 
 #### `TextReuse`
 TextReuse models an instance where an author quotes, summarizes, alludes to, or otherwise re-uses language in a text that comes from another text.
+
+An `rdf:value` property on an `Attestation` or `TextReuse` may be used to provide the text of, e.g., the attestation or reuse.
 
 ### Object Properties
 
