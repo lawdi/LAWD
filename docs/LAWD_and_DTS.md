@@ -1,4 +1,4 @@
-# A LAWD's-eye view of DTS
+# A LAWD's-eye view of DTS—DRAFT
 
 ## Container Hierarchy
 `RDF Type: http://purl.org/dc/dcmitype/Collection`
